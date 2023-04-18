@@ -1,0 +1,60 @@
+
+.form-wrap {
+  select,
+  .form-input {
+    width: 100%;
+  }
+
+  .form-input,
+  select {
+    height: 42px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  > div {
+    position: relative;
+    > label {
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      background: #FFFFFF;
+      padding: 0 4px;
+      color: #444;
+      font-size: 14px;
+    }
+  }
+
+
+}
+
+#root {
+  .titleArea {
+    margin-bottom: 40px;
+    > .title {
+      font-weight: 700;
+      margin-right: 30px;
+    }
+
+    > ol {
+      li {
+        background: #ccc;
+        width: 26px;
+        height: 26px;
+
+        &.-active {
+          background-color: var(--active-color);
+        }
+      }
+    }
+  }
+  .submit-button {
+    background-color: var(--button-color);
+    color: #fff;
+
+  }
+  .link {
+  }
+}
