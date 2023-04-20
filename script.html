@@ -1,0 +1,173 @@
+<script>
+  // ブロックで指定できるのは以下の項目
+/*
+name: "last_name",input,selectに設置するname
+label:"姓", ラベル名
+placeholder: "例）山田", プレースホルダー
+size: "half", [50%のブロックを指定]
+required: true [必須項目]
+validation: "email", or "tel"  [バリデーションのemailかtel]
+type: "select" or "radio" or "checkbox",
+options: [ // "select" or "radio" or "checkbox"の場合には必須設定
+  {
+    label: "",
+    value: ""
+  },
+  {
+    label: "セレクト1",
+    value: "セレクト1",
+  },
+  {
+    label: "セレクト2",
+    value: "セレクト2",
+  }
+],
+note: "ご連絡がつきやすい番号のご入力をお願いいたします。", // フォーム下の注釈
+link: { // linkありのテキスト
+  href: "https://bizreach.biz/privacy-policy/",
+  text: "個人情報の取り扱い"
+}
+*/
+  var formsObject = [
+    // 一つ目のブロック
+    [
+      {
+        name: "last_name",
+        label: "姓",
+        placeholder: "例）山田",
+        size: "half",
+        required: true,
+      },
+      {
+        name: "first_name",
+        label: "名",
+        placeholder: "例）太郎",
+        size: "half",
+        required: true
+      },
+      {
+        name: "email",
+        label: "メールアドレス",
+        placeholder: "xxxx@xxxx.co.jp",
+        required: true,
+        validation: "email"
+      },
+    ],
+    // 二つ目のブロック
+    [
+      {
+        name: "company_name",
+        label: "2ブロック:1つ目",
+        placeholder: "例）株式会社ビズリーチ",
+        required: true
+      },
+      {
+        name: "dummy2",
+        label: "2ブロック:2つ目",
+        type: "select",
+        options: [
+          {
+            label: "",
+            value: ""
+          },
+          {
+            label: "セレクト1",
+            value: "セレクト1",
+          },
+          {
+            label: "セレクト2",
+            value: "セレクト2",
+          }
+        ],
+        required: true
+      },
+      {
+        name: "dummy3",
+        label: "2ブロック:3つ目",
+        placeholder: "",
+        options: [
+          {
+            label: "dummy3-1",
+            value: "dummy3-1",
+          },
+          {
+            label: "dummy3-2",
+            value: "dummy3-2",
+          }
+        ],
+        required: true
+      },
+    ],
+    // 三つ目のブロック
+    [
+      {
+        name: "tel",
+        label: "電話番号",
+        placeholder: "例）090-xxxx-xxxx",
+        note: "ご連絡がつきやすい番号のご入力をお願いいたします。",
+        validation: "tel",
+        required: true
+      },
+      {
+        name: "adoption_support_service",
+        type: "radio",
+        options: [
+          {
+            label: "選定を行なっている",
+            value: "選定を行なっている",
+          },
+          {
+            label: "利用を検討しており、情報収集をしている",
+            value: "利用を検討しており、情報収集をしている"
+          },
+          {
+            label:  " 利用する予定はない",
+            value: ": 利用する予定はない"
+          }
+        ],
+        title: "採用支援サービスについて",
+        required: true
+      },
+      {
+        title: "個人情報の取り扱いに ",
+        type: "checkbox",
+        name: "agree_personal_information",
+        options: [
+          {
+            label: "同意する",
+            value: "同意する"
+          }
+        ],
+        required: true
+      },
+      {
+        link: {
+          href: "https://bizreach.biz/privacy-policy/",
+          text: "個人情報の取り扱い"
+        }
+      }
+    ]
+  ]
+  var submitText = "ダウンロードする" // formの最後に表示するテキスト
+  var post = "https://prdt.bizreach.biz/l/291452/2019-06-14/4pnlzqaaaa" //フォームの送信先
+</script>
+<style>
+  :root {
+    /*  */
+    --button-color: #FF7713;
+  }
+  #app {
+    width: min(100% - 30px, 450px);
+    margin-inline: auto;
+    padding: 20px 0;
+  }
+  #app > h1 {
+    font-size: 24px;
+    font-weight: 700;
+
+  }
+  #app > #root {
+    margin-top: 15px;
+  }
+
+</style>
